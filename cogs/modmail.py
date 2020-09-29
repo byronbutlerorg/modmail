@@ -97,9 +97,8 @@ class Modmail(commands.Cog):
 
         embed.add_field(
             name="Thanks for using our bot!",
-            value="If you like what you see, consider giving the "
-            "[repo a star](https://github.com/kyb3r/modmail) :star: and if you are "
-            "feeling extra generous, buy us coffee on [Patreon](https://patreon.com/kyber) :heart:!",
+            value="If you like what you see, consider giving us a "
+            "[donation]https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YAB78C22BL89L&source=url :heart:!",
         )
 
         embed.set_footer(text=f'Type "{self.bot.prefix}help" for a complete list of commands.')

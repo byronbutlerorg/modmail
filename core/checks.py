@@ -52,7 +52,7 @@ async def check_permissions(ctx, command_name) -> bool:
         and ctx.channel.permissions_for(ctx.author).administrator
         and ctx.guild == ctx.bot.modmail_guild
     ):
-        # Administrators have permission to all non-owner commands in the Modmail Guild
+        # Administrators have permission to all non-owner commands in the PiratasRP_Support Guild
         logger.debug("Allowed due to administrator.")
         return True
 
@@ -80,7 +80,7 @@ async def check_permissions(ctx, command_name) -> bool:
 def thread_only():
     """
     A decorator that checks if the command
-    is being ran within a Modmail thread.
+    is being ran within a PiratasRP_Support thread.
     """
 
     async def predicate(ctx):
@@ -93,10 +93,10 @@ def thread_only():
         Returns
         -------
         Bool
-            `True` if the current `Context` is within a Modmail thread.
+            `True` if the current `Context` is within a PiratasRP_Support thread.
             Otherwise, `False`.
         """
         return ctx.thread is not None
 
-    predicate.fail_msg = "This is not a Modmail thread."
+    predicate.fail_msg = "This is not a PiratasRP_Support thread."
     return commands.check(predicate)

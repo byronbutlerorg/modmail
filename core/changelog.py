@@ -11,12 +11,12 @@ logger = getLogger(__name__)
 
 class Version:
     """
-    This class represents a single version of Modmail.
+    This class represents a single version of PiratasRP_Support.
 
     Parameters
     ----------
     bot : Bot
-        The Modmail bot.
+        The PiratasRP_Support bot.
     version : str
         The version string (ie. "v2.12.0").
     lines : str
@@ -25,7 +25,7 @@ class Version:
     Attributes
     ----------
     bot : Bot
-        The Modmail bot.
+        The PiratasRP_Support bot.
     version : str
         The version string (ie. "v2.12.0").
     lines : str
@@ -101,19 +101,19 @@ class Version:
 
 class Changelog:
     """
-    This class represents the complete changelog of Modmail.
+    This class represents the complete changelog of PiratasRP_Support.
 
     Parameters
     ----------
     bot : Bot
-        The Modmail bot.
+        The PiratasRP_Support bot.
     text : str
         The complete changelog text.
 
     Attributes
     ----------
     bot : Bot
-        The Modmail bot.
+        The PiratasRP_Support bot.
     text : str
         The complete changelog text.
     versions : List[Version]
@@ -158,7 +158,7 @@ class Changelog:
         Parameters
         ----------
         bot : Bot
-            The Modmail bot.
+            The PiratasRP_Support bot.
         url : str, optional
             The URL to the changelog.
 

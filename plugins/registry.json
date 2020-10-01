@@ -20,7 +20,7 @@
        "dragory-migrate": {
         "repository": "kyb3r/modmail-plugins",
         "branch": "master",
-        "description": "Migrate your logs from Dragory's modmail bot to this one with a simple command. Added at the request of users.",
+        "description": "Migrate your logs from Dragory's PiratasRP_Support bot to this one with a simple command. Added at the request of users.",
         "bot_version": "2.20.1",
         "title": "Dragory Logs Migration",
         "icon_url": "https://cdn1.iconfinder.com/data/icons/web-hosting-2-4/52/200-512.png",
@@ -181,7 +181,7 @@
     "stats": {
         "repository": "KarateWumpus/modmail-plugins",
         "branch": "master",
-        "description": "Get useful stats directly in an embed about either the Modmail bot, a user or the server.",
+        "description": "Get useful stats directly in an embed about either the PiratasRP_Support bot, a user or the server.",
         "bot_version": "2.24.1",
         "title": "Get Stats",
         "icon_url": "https://image.flaticon.com/icons/png/512/117/117761.png",
@@ -190,7 +190,7 @@
     "moderation": {
         "repository": "xPolar/modmail-plugins",
         "branch": "master",
-        "description": "Moderate your server with Modmail, bring the Mod to Modmail!",
+        "description": "Moderate your server with PiratasRP_Support, bring the Mod to PiratasRP_Support!",
         "bot_version": "3.0.3",
         "title": "Moderate your server",
         "icon_url": "https://cdn.discordapp.com/attachments/539943767562780704/601485194196680704/wGFmzZq.png",

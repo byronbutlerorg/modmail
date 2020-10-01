@@ -17,7 +17,7 @@ logger = getLogger(__name__)
 
 
 class Thread:
-    """Represents a discord Modmail thread"""
+    """Represents a discord PiratasRP_Support thread"""
 
     def __init__(
         self,
@@ -869,7 +869,7 @@ class Thread:
 
 
 class ThreadManager:
-    """Class that handles storing, finding and creating Modmail threads."""
+    """Class that handles storing, finding and creating PiratasRP_Support threads."""
 
     def __init__(self, bot):
         self.bot = bot
@@ -965,7 +965,7 @@ class ThreadManager:
         creator: typing.Union[discord.Member, discord.User] = None,
         category: discord.CategoryChannel = None,
     ) -> Thread:
-        """Creates a Modmail thread"""
+        """Creates a PiratasRP_Support thread"""
 
         # checks for existing thread in cache
         thread = self.cache.get(recipient.id)
@@ -993,7 +993,7 @@ class ThreadManager:
                     category = fallback
 
             if not category:
-                category = await cat.clone(name="Fallback Modmail")
+                category = await cat.clone(name="Fallback PiratasRP_Support")
                 self.bot.config.set("fallback_category_id", category.id)
                 await self.bot.config.update()
 

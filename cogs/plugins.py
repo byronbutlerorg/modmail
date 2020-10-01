@@ -88,7 +88,7 @@ class Plugin:
 
 class Plugins(commands.Cog):
     """
-    Plugins expand Modmail functionality by allowing third-party addons.
+    Plugins expand PiratasRP_Support functionality by allowing third-party addons.
 
     These addons could have a range of features from moderation to simply
     making your life as a moderator easier!
@@ -279,7 +279,7 @@ class Plugins(commands.Cog):
     @checks.has_permissions(PermissionLevel.OWNER)
     async def plugins(self, ctx):
         """
-        Manage plugins for Modmail.
+        Manage plugins for PiratasRP_Support.
         """
 
         await ctx.send_help(ctx.command)

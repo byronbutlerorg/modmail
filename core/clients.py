@@ -22,12 +22,12 @@ class ApiClient:
     Parameters
     ----------
     bot : Bot
-        The Modmail bot.
+        The PiratasRP_Support bot.
 
     Attributes
     ----------
     bot : Bot
-        The Modmail bot.
+        The PiratasRP_Support bot.
     session : ClientSession
         The bot's current running `ClientSession`.
     """

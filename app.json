@@ -1,6 +1,6 @@
 {
-  "name": "Modmail",
-  "description": "An easy to install Modmail bot for Discord - DM to contact mods!",
+  "name": "PiratasRP_Support",
+  "description": "An easy to install PiratasRP_Support bot for Discord - DM to contact mods!",
   "repository": "https://github.com/kyb3r/modmail",
   "env": {
     "TOKEN": {

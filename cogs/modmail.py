@@ -41,7 +41,7 @@ class Modmail(commands.Cog):
 
         if ctx.guild != self.bot.modmail_guild:
             return await ctx.send(
-                f"You can only setup in the Support_Bot guild: {self.bot.modmail_guild}."
+                f"You can only setup in the PiratasRP_Support guild: {self.bot.modmail_guild}."
             )
 
         if self.bot.main_category is not None:
@@ -51,7 +51,7 @@ class Modmail(commands.Cog):
         if self.bot.modmail_guild is None:
             embed = discord.Embed(
                 title="Error",
-                description="Support_Bot functioning guild not found.",
+                description="PiratasRP_Support functioning guild not found.",
                 color=self.bot.error_color,
             )
             return await ctx.send(embed=embed)
@@ -74,11 +74,11 @@ class Modmail(commands.Cog):
                     if key is None:
                         key = self.bot.modmail_guild.get_role(perm)
                 if key is not None:
-                    logger.info("Granting %s access to Support_Bot category.", key.name)
+                    logger.info("Granting %s access to PiratasRP_Support category.", key.name)
                     overwrites[key] = discord.PermissionOverwrite(read_messages=True)
 
         category = await self.bot.modmail_guild.create_category(
-            name="Support_Bot", overwrites=overwrites
+            name="PiratasRP_Support", overwrites=overwrites
         )
 
         await category.edit(position=0)
@@ -111,7 +111,7 @@ class Modmail(commands.Cog):
         await ctx.send(
             "**Successfully set up server.**\n"
             "Consider setting permission levels to give access to roles "
-            "or users the ability to use Support_Bot.\n\n"
+            "or users the ability to use PiratasRP_Support.\n\n"
             f"Type:\n- `{self.bot.prefix}permissions` and `{self.bot.prefix}permissions add` "
             "for more info on setting permissions.\n"
             f"- `{self.bot.prefix}config help` for a list of available customizations."
@@ -554,7 +554,7 @@ class Modmail(commands.Cog):
     @checks.has_permissions(PermissionLevel.SUPPORTER)
     @checks.thread_only()
     async def nsfw(self, ctx):
-        """Flags a Support_Bot thread as NSFW (not safe for work)."""
+        """Flags a PiratasRP_Support thread as NSFW (not safe for work)."""
         await ctx.channel.edit(nsfw=True)
         sent_emoji, _ = await self.bot.retrieve_emoji()
         await self.bot.add_reaction(ctx.message, sent_emoji)
@@ -563,7 +563,7 @@ class Modmail(commands.Cog):
     @checks.has_permissions(PermissionLevel.SUPPORTER)
     @checks.thread_only()
     async def sfw(self, ctx):
-        """Flags a Support_Bot thread as SFW (safe for work)."""
+        """Flags a PiratasRP_Support thread as SFW (safe for work)."""
         await ctx.channel.edit(nsfw=False)
         sent_emoji, _ = await self.bot.retrieve_emoji()
         await self.bot.add_reaction(ctx.message, sent_emoji)
@@ -623,7 +623,7 @@ class Modmail(commands.Cog):
     @checks.has_permissions(PermissionLevel.SUPPORTER)
     async def logs(self, ctx, *, user: User = None):
         """
-        Get previous Support_Bot thread logs of a member.
+        Get previous PiratasRP_Support thread logs of a member.
 
         Leave `user` blank when this command is used within a
         thread channel to show logs for the current recipient.
@@ -761,7 +761,7 @@ class Modmail(commands.Cog):
     @checks.thread_only()
     async def reply(self, ctx, *, msg: str = ""):
         """
-        Reply to a Support_Bot thread.
+        Reply to a PiratasRP_Support thread.
 
         Supports attachments and images as well as
         automatically embedding image URLs.
@@ -775,7 +775,7 @@ class Modmail(commands.Cog):
     @checks.thread_only()
     async def freply(self, ctx, *, msg: str = ""):
         """
-        Reply to a Support_Bot thread with variables.
+        Reply to a PiratasRP_Support thread with variables.
 
         Works just like `{prefix}reply`, however with the addition of three variables:
           - `{{channel}}` - the `discord.TextChannel` object
@@ -888,7 +888,7 @@ class Modmail(commands.Cog):
         else:
             thread = await self.bot.threads.create(user, creator=ctx.author, category=category)
             if self.bot.config["dm_disabled"] >= 1:
-                logger.info("Contacting user %s when Support_Bot DM is disabled.", user)
+                logger.info("Contacting user %s when PiratasRP_Support DM is disabled.", user)
 
             embed = discord.Embed(
                 title="Created Thread",
@@ -1003,7 +1003,7 @@ class Modmail(commands.Cog):
     @trigger_typing
     async def block(self, ctx, user: Optional[User] = None, *, after: UserFriendlyTime = None):
         """
-        Block a user from using Support_Bot.
+        Block a user from using PiratasRP_Support.
 
         You may choose to set a time as to when the user will automatically be unblocked.
 
@@ -1072,7 +1072,7 @@ class Modmail(commands.Cog):
     @trigger_typing
     async def unblock(self, ctx, *, user: User = None):
         """
-        Unblock a user from using Support_Bot.
+        Unblock a user from using PiratasRP_Support.
 
         Leave `user` blank when this command is used within a
         thread channel to unblock the current recipient.
@@ -1174,7 +1174,7 @@ class Modmail(commands.Cog):
         )
         if thread is not None:
             logger.debug("Found thread with tempered ID.")
-            await ctx.channel.edit(reason="Fix broken Support_Bot thread", topic=f"User ID: {user_id}")
+            await ctx.channel.edit(reason="Fix broken PiratasRP_Support thread", topic=f"User ID: {user_id}")
             return await self.bot.add_reaction(ctx.message, sent_emoji)
 
         # find genesis message to retrieve User ID
@@ -1202,7 +1202,7 @@ class Modmail(commands.Cog):
                         "Setting current channel's topic to User ID and created new thread."
                     )
                     await ctx.channel.edit(
-                        reason="Fix broken Support_Bot thread", topic=f"User ID: {user_id}"
+                        reason="Fix broken PiratasRP_Support thread", topic=f"User ID: {user_id}"
                     )
                     return await self.bot.add_reaction(ctx.message, sent_emoji)
 
@@ -1253,7 +1253,7 @@ class Modmail(commands.Cog):
                 thread.ready = True
                 logger.info("Setting current channel's topic to User ID and created new thread.")
                 await ctx.channel.edit(
-                    reason="Fix broken Support_Bot thread", name=name, topic=f"User ID: {user.id}"
+                    reason="Fix broken PiratasRP_Support thread", name=name, topic=f"User ID: {user.id}"
                 )
                 return await self.bot.add_reaction(ctx.message, sent_emoji)
 
@@ -1265,13 +1265,13 @@ class Modmail(commands.Cog):
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
     async def enable(self, ctx):
         """
-        Re-enables DM functionalities of Support_Bot.
+        Re-enables DM functionalities of PiratasRP_Support.
 
         Undo's the `{prefix}disable` command, all DM will be relayed after running this command.
         """
         embed = discord.Embed(
             title="Success",
-            description="Support_Bot will now accept all DM messages.",
+            description="PiratasRP_Support will now accept all DM messages.",
             color=self.bot.main_color,
         )
 
@@ -1285,11 +1285,11 @@ class Modmail(commands.Cog):
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
     async def disable(self, ctx):
         """
-        Disable partial or full Support_Bot thread functions.
+        Disable partial or full PiratasRP_Support thread functions.
 
         To stop all new threads from being created, do `{prefix}disable new`.
-        To stop all existing threads from DMing Support_Bot, do `{prefix}disable all`.
-        To check if the DM function for Support_Bot is enabled, do `{prefix}isenable`.
+        To stop all existing threads from DMing PiratasRP_Support, do `{prefix}disable all`.
+        To check if the DM function for PiratasRP_Support is enabled, do `{prefix}isenable`.
         """
         await ctx.send_help(ctx.command)
 
@@ -1297,13 +1297,13 @@ class Modmail(commands.Cog):
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
     async def disable_new(self, ctx):
         """
-        Stop accepting new Support_Bot threads.
+        Stop accepting new PiratasRP_Support threads.
 
         No new threads can be created through DM.
         """
         embed = discord.Embed(
             title="Success",
-            description="Support_Bot will not create any new threads.",
+            description="PiratasRP_Support will not create any new threads.",
             color=self.bot.main_color,
         )
         if self.bot.config["dm_disabled"] < 1:
@@ -1316,13 +1316,13 @@ class Modmail(commands.Cog):
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
     async def disable_all(self, ctx):
         """
-        Disables all DM functionalities of Support_Bot.
+        Disables all DM functionalities of PiratasRP_Support.
 
         No new threads can be created through DM nor no further DM messages will be relayed.
         """
         embed = discord.Embed(
             title="Success",
-            description="Support_Bot will not accept any DM messages.",
+            description="PiratasRP_Support will not accept any DM messages.",
             color=self.bot.main_color,
         )
 
@@ -1336,25 +1336,25 @@ class Modmail(commands.Cog):
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
     async def isenable(self, ctx):
         """
-        Check if the DM functionalities of Support_Bot is enabled.
+        Check if the DM functionalities of PiratasRP_Support is enabled.
         """
 
         if self.bot.config["dm_disabled"] == 1:
             embed = discord.Embed(
                 title="New Threads Disabled",
-                description="Support_Bot is not creating new threads.",
+                description="PiratasRP_Support is not creating new threads.",
                 color=self.bot.error_color,
             )
         elif self.bot.config["dm_disabled"] == 2:
             embed = discord.Embed(
                 title="All DM Disabled",
-                description="Support_Bot is not accepting any DM messages for new and existing threads.",
+                description="PiratasRP_Support is not accepting any DM messages for new and existing threads.",
                 color=self.bot.error_color,
             )
         else:
             embed = discord.Embed(
                 title="Enabled",
-                description="Support_Bot now is accepting all DM messages.",
+                description="PiratasRP_Support now is accepting all DM messages.",
                 color=self.bot.main_color,
             )
 
